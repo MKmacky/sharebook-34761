@@ -1,24 +1,46 @@
-# README
+# sharebookテーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column   | Type    | Options     |
+| -------- | ------- | ----------- |
+| email    | string  | null: false |
+| password | string  | null: false |
+| name     | string  | null: false |
+| age      | integer | null: false |
+| position | integer | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+has_many :books
+has_many :comments
 
-* Configuration
 
-* Database creation
+## booksテーブル
 
-* Database initialization
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| title     | string     | null: false                    |
+| content   | text       | null: false                    |
+| recommend | text       | null: false                    |
+| image     | string     | null: false, ActiveStorage     |
+| user      | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+belongs_to :user
+has_many   :comments
 
-* Deployment instructions
 
-* ...
+## commentsテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| book   | references | null: false, foreign_key: true |
+
+### Association
+
+belongs_to :user
+belongs_to :book
