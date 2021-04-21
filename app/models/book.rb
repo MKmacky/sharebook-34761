@@ -3,7 +3,6 @@ class Book < ApplicationRecord
   validates :genre    , presence: true
   validates :content  , presence: true
   validates :recommend, presence: true
-  validates :image    , presence: true
 
   belongs_to       :user
   has_many         :comments

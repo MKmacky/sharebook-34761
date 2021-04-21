@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2021_04_21_092820) do
     t.integer "genre", null: false
     t.text "content", null: false
     t.text "recommend", null: false
-    t.string "image", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
