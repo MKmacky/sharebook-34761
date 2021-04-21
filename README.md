@@ -21,6 +21,7 @@ has_many :comments
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | title     | string     | null: false                    |
+| genre     | integer    | null: false                    |
 | content   | text       | null: false                    |
 | recommend | text       | null: false                    |
 | image     | string     | null: false, ActiveStorage     |
