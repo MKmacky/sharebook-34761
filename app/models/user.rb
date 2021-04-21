@@ -7,4 +7,7 @@ class User < ApplicationRecord
   validates :name,     presence: true
   validates :age,      presence: true
   validates :position, presence: true
+
+  has_many :books
+  has_many :comments
 end
