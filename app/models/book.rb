@@ -1,10 +1,11 @@
 class Book < ApplicationRecord
-  validates :title
-  validates :genre
-  validates :content
-  validates :recommend
-  validates :image
+  validates :title    , presence: true
+  validates :genre    , presence: true
+  validates :content  , presence: true
+  validates :recommend, presence: true
+  validates :image    , presence: true
 
-  belongs_to :user
-  has_many   :comments
+  belongs_to       :user
+  has_many         :comments
+  has_one_attached :image
 end
