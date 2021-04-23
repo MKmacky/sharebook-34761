@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :age
+    validates :age  
     validates :position
   end
-
+  
   has_many :books
   has_many :comments
 end
