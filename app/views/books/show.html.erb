@@ -4,7 +4,7 @@
       <p class="prototype__hedding">
         <%= @book.title %>
       </p>
-      <%= link_to @book.user.name, root_path, class: :prototype__user %>
+      <%= link_to @book.user.name, user_path(@book.user.id), class: :prototype__user %>
       <% if user_signed_in? && current_user.id == @book.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_book_path(@book.id), method: :get, class: :prototype__btn %>
@@ -50,7 +50,7 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <%= comment.text %>
-              <%= link_to comment.user.name, root_path, class: :comment_user %>
+              <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %>
             </li>
           <% end %>
         </ul>
