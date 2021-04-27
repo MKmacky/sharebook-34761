@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:edit, :show]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :move_to_index, only: :edit
 
   def index
     @books = Book.all
@@ -52,4 +54,10 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def move_to_index
+    unless user_signed_in? && current_user.id == @book.user_id
+      redirect_to action: :index
+    end
+  end
+  
 end
