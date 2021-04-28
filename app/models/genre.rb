@@ -18,4 +18,6 @@ class Genre < ActiveHash::Base
     { id: 15, name: 'コミックス' },
     { id: 16, name: 'その他' }
   ]
+  include ActiveHash::Associations
+  has_many :books
 end

@@ -6,10 +6,15 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :age  
-    validates :position
+    with_options numericality: { other_than: 0 } do
+      validates :age_id
+      validates :position_id 
+    end
   end
   
   has_many :books
   has_many :comments
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :age
+  belongs_to :position
 end

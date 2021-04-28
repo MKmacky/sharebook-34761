@@ -1,4 +1,4 @@
-class Psition < ActiveHash::Base
+class Position < ActiveHash::Base
   self.data = [
     { id: 0, name: '--' },
     { id: 1, name: '小学生' },
@@ -10,4 +10,6 @@ class Psition < ActiveHash::Base
     { id: 7, name: 'フリーター' },
     { id: 8, name: 'その他' }
   ]
+  include ActiveHash::Associations
+  has_many :users
 end
