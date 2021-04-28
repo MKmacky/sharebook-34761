@@ -26,13 +26,13 @@
         </div>
 
         <div class="field">
-          <%= f.label :age, "年代" %><br />
-          <%= f.text_area :age, class: :form__text, id:"user_profile" %>
+          <%= f.label :age_id, "年代" %><br />
+          <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"form__text"}) %>
         </div>
 
         <div class="field">
-          <%= f.label :position, "所属" %><br />
-          <%= f.text_area :position, class: :form__text, id:"user_occupation" %>
+          <%= f.label :position_id, "所属" %><br />
+          <%= f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"form__text"}) %>
         </div>
 
         <div class="actions">

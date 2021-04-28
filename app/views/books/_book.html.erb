@@ -3,7 +3,7 @@
   <div class="card__body">
     <%= link_to book.title, book_path(book.id), class: :card__title%>
     <p class="card__summary">
-      <%= book.genre %>
+      <%= book.genre.name %>
     </p>
     <%= link_to book.user.name, user_path(book.user.id), class: :card__user %>
   </div>
