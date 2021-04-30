@@ -161,6 +161,11 @@ a {
   text-decoration: underline;
 }
 
+#image-list {
+  width: 40%;
+  padding: 16px 0;
+}
+
 /* 詳細ページ */
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
